@@ -1,0 +1,15 @@
+.header-item{
+    list-style: none;
+    font-family: 'Roboto condensed',sans-serif;
+    color: #FFF;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 20px;
+
+    &:hover{
+        color: #34c6d3;
+        cursor: pointer;
+    }
+}
