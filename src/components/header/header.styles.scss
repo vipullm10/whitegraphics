@@ -1,13 +1,64 @@
+@import "../global-styles/mixins.scss";
+
+@keyframes toggleAnimation{
+    from{
+        max-height: 0px;
+    }
+    to{
+        max-height: 1000px;
+    }
+}
+
 .header-container{
     width: 100%;
     display: grid;
-    grid-template-columns: 4.5fr 7.5fr;
+    grid-template-columns: 1fr 10fr 1fr;
     padding: 20px;
-    background: rgba(0,0,0,.7);
+    background: rgba(0,0,0,.7);    
+
+    @include largeScreen(){
+        grid-template-columns: 3fr 9fr;
+    }
+
+    @include extraLargeScreen(){
+        grid-template-columns: 4.5fr 7.5fr;
+        // opacity: 0;
+    }
+
+    .logo-list{
+        .header-item{
+            transform: translateY(6px);
+            @include largeScreen{
+                transform: translateY(0);
+            }
+        }
+    }
 
     .items-list{
-        display: flex;
+        display: none;
         justify-content: space-around;
+        @include largeScreen(){
+            display: flex;
+            justify-content: space-around;
+        }        
+    }
+
+    .nav-toggle-list{
+        margin-top: 20px;
+        padding-top: 20px;
+        // display: none;
+        border-top: solid 1px rgba(255,255,255,.7);
+        animation: .5s toggleAnimation 1;
+        animation-timing-function: ease-in;
+        // transform: animation 1.5s linear;
+        @include largeScreen(){
+            display: none;
+        }
+        transition: max-height .5s ease-in;
+        .header-item{
+            margin: 15px 0;
+        }
+    
     }
 
     .logo-container .header-item{

@@ -1,0 +1,41 @@
+@import "../global-styles/mixins.scss";
+@mixin bar-styles{
+    display: inline-block;
+    width: 24px;
+    left: 9px;
+    position: absolute;
+    top: 10px;
+    height: 2px;
+    background-color: #FFF;
+}
+.navbar-toggle-btn{
+    width: 44px;
+    height: 36px;
+    background: black;
+    border: solid 1px #FFF;
+    position: relative;
+    display: block;
+    cursor: pointer;
+
+    &:focus{
+        outline: none;
+    }
+
+    @include largeScreen(){
+        display: none;
+    }
+    .first-bar{
+        @include bar-styles();
+        top: 8px;
+    }
+
+    .second-bar{
+        @include bar-styles();
+        top: 16px;
+    }
+
+    .third-bar{
+        @include bar-styles();
+        top: 24px;
+    }
+}
