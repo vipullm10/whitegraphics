@@ -1,0 +1,45 @@
+@import "../global-styles/mixins.scss";
+
+@keyframes scaleAnimation{
+    from{
+        transform: scale(0);
+    }to{
+        transform: scale(1);
+    }
+}
+
+.homepage-container{
+    background: url("../../images/bg-home.jpg") center center no-repeat;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    .homepage-content{
+        font-family: 'Roboto condensed';
+        color: #FFF;
+        text-transform: uppercase;
+        font-size: 18px;
+        
+        .jumbotron-title{
+            animation: .4s scaleAnimation 1;
+            animation-timing-function: ease-in;
+        }   
+        
+        .white-btn{
+            animation: .4s scaleAnimation 1;
+            animation-timing-function: ease-in;
+        }
+        
+        @include mediumScreen(){
+            font-size: 24px;
+        }
+
+        @include largeScreen(){
+            font-size: 30px;
+        }
+    }
+}

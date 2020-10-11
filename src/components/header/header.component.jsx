@@ -18,7 +18,7 @@ class Header extends React.Component {
         if(this.state.isNavbarToggle===false){
             this.setState({isNavbarToggle:true},() => console.log(this.state));
         }else{
-            this.setState({isNavbarToggle:false},()=>console.log(this.state))
+            this.setState({isNavbarToggle:false},()=>console.log(this.state));
         }
     }
 

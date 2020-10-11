@@ -1,0 +1,25 @@
+@import "../global-styles/mixins.scss";
+.white-btn{
+    font-family: 'Roboto-condensed',sans-serif;
+    padding: 9px 16px;
+    border: solid 1px #FFF;
+    text-transform: uppercase;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #FFF;
+    background: transparent;
+    cursor: pointer;
+
+    &:hover{
+        background: #FFF;
+        color: gray;
+    }
+
+    @include mediumScreen(){
+        padding: 10px 20px ;
+    }
+
+    @include largeScreen(){
+        padding: 12px 30px;
+    }
+}

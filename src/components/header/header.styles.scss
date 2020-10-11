@@ -10,6 +10,8 @@
 }
 
 .header-container{
+    position: fixed;
+    z-index: 9999;
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 10fr 1fr;
@@ -50,12 +52,13 @@
         border-top: solid 1px rgba(255,255,255,.7);
         animation: .5s toggleAnimation 1;
         animation-timing-function: ease-in;
-        // transform: animation 1.5s linear;
+        
         @include largeScreen(){
             display: none;
         }
-        transition: max-height .5s ease-in;
+        // transition: max-height .5s ease-in;
         .header-item{
+            transition: all .5s ease;
             margin: 15px 0;
         }
     
