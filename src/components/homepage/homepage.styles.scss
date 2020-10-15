@@ -24,15 +24,6 @@
         text-transform: uppercase;
         font-size: 18px;
         
-        .jumbotron-title{
-            animation: .4s scaleAnimation 1;
-            animation-timing-function: ease-in;
-        }   
-        
-        .white-btn{
-            animation: .4s scaleAnimation 1;
-            animation-timing-function: ease-in;
-        }
         
         @include mediumScreen(){
             font-size: 24px;

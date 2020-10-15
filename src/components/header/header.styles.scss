@@ -1,15 +1,7 @@
 @import "../global-styles/mixins.scss";
 
-@keyframes toggleAnimation{
-    from{
-        max-height: 0px;
-    }
-    to{
-        max-height: 1000px;
-    }
-}
-
 .header-container{
+    transition: all .3s linear;
     position: fixed;
     z-index: 9999;
     width: 100%;
@@ -50,8 +42,6 @@
         padding-top: 20px;
         // display: none;
         border-top: solid 1px rgba(255,255,255,.7);
-        animation: .5s toggleAnimation 1;
-        animation-timing-function: ease-in;
         
         @include largeScreen(){
             display: none;
