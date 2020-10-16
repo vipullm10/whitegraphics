@@ -1,16 +1,26 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import './header.styles.scss';
 import HeaderItem from '../header-item/header-item.component';
 import NavbarToggleButton from '../buttons/navbar-toggle-btn.component';
-import {Transition,animated,Spring} from 'react-spring/renderprops';
+import {Transition,animated} from 'react-spring/renderprops';
 
 const Header = () => {
     const [isNavbarToggle,setIsNavbarToggle] = useState(false);
+    const [isWindowScrolled,setIsWindowScrolled] = useState(false);
+    
+    useEffect(()=>{
+        window.addEventListener('scroll',(e)=>{
+            const scrollTop = window.scrollY;
+            console.log(scrollTop);
+            (scrollTop>40) ? setIsWindowScrolled(true) : setIsWindowScrolled(false);
+        })
+    })
+    
     const handleClick = (e) => {
         setIsNavbarToggle(!isNavbarToggle);
     }
         return(
-            <div className="header-container">
+            <div className={`header-container ${isWindowScrolled ? "solid-bg" : "transparent-bg"}`}>
                 <div className="logo-container">
                     <ul className="logo-list">
                         <HeaderItem title="WG"/>
@@ -35,9 +45,9 @@ const Header = () => {
                 <Transition
                     native
                     items={isNavbarToggle}
-                    from={{height:'0px'}}
-                    enter={{height:'400px'}}
-                    leave={{height:'0px'}}
+                    from={{height:'0px',opacity:0}}
+                    enter={{height:'400px',opacity:1}}
+                    leave={{height:'0px',opacity:0}}
                 >
                     {show => show && (props=>
                             <animated.div style={props}>

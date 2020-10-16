@@ -8,7 +8,7 @@
     display: grid;
     grid-template-columns: 1fr 10fr 1fr;
     padding: 20px;
-    background: rgba(0,0,0,.7);    
+        
 
     @include largeScreen(){
         grid-template-columns: 3fr 9fr;
@@ -60,4 +60,12 @@
             color: #FFF;
         }
     }
+}
+
+.solid-bg{
+    background: rgba(0,0,0,.7);
+}
+
+.transparent-bg{
+    background:transparent;
 }
